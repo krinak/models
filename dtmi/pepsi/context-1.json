@@ -1,0 +1,85 @@
+ {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:context;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Organization"
+        },
+        "name": "Organization",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "ParentSite"
+        },
+        "name": "ParentSite",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Site"
+        },
+        "name": "Site",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Country"
+        },
+        "name": "Country",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "State"
+        },
+        "name": "State",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "City"
+        },
+        "name": "City",
+        "schema": "string",
+        "writable": true
+      }
+    ],
+    "displayName": {
+      "en": "context"
+    }
+  }

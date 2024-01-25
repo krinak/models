@@ -1,0 +1,557 @@
+ {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:sodastream:carbonator;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "CO2"
+        },
+        "name": "co2",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Level"
+              },
+              "name": "Level",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "LastReplaced"
+              },
+              "name": "LastReplaced",
+              "schema": "dateTime"
+            },
+            {
+              "displayName": {
+                "en": "Clean"
+              },
+              "name": "Clean",
+              "schema": "boolean"
+            },
+            {
+              "displayName": {
+                "en": "Rotate"
+              },
+              "name": "Rotate",
+              "schema": "boolean"
+            },
+            {
+              "displayName": {
+                "en": "Unclog"
+              },
+              "name": "Unclog",
+              "schema": "boolean"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Liquid"
+        },
+        "name": "liq",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Temperature"
+              },
+              "name": "Temperature",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Fan"
+              },
+              "name": "Fan",
+              "schema": "boolean"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "WaterFiltration"
+        },
+        "name": "wtft",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Value"
+              },
+              "name": "Value",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "LastReplaced"
+              },
+              "name": "LastReplaced",
+              "schema": "dateTime"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "WaterPressure"
+        },
+        "name": "wtpr",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Value"
+              },
+              "name": "Value",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Cartridges"
+        },
+        "name": "crt",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Level"
+              },
+              "name": "Level",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "RaspberryLime"
+              },
+              "name": "RaspberryLime",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Strawberry"
+              },
+              "name": "Strawberry",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "LemonMint"
+              },
+              "name": "LemonMint",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "OrangeGrapefruit"
+              },
+              "name": "OrangeGrapefruit",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Peach"
+              },
+              "name": "Peach",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Lime"
+              },
+              "name": "Lime",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "ADAInterface"
+        },
+        "name": "ada",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Condition"
+              },
+              "name": "Condition",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Good"
+                    },
+                    "enumValue": 0,
+                    "name": "Good"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Bad"
+                    },
+                    "enumValue": 1,
+                    "name": "Bad"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "CO2Hardware"
+        },
+        "name": "co2h",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Condition"
+              },
+              "name": "Condition",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Good"
+                    },
+                    "enumValue": 0,
+                    "name": "Good"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Bad"
+                    },
+                    "enumValue": 1,
+                    "name": "Bad"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Lighting"
+        },
+        "name": "ligh",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "WorkingLights"
+              },
+              "name": "WorkingLights",
+              "schema": "integer"
+            },
+            {
+              "displayName": {
+                "en": "AllLights"
+              },
+              "name": "AllLights",
+              "schema": "integer"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Nozzle"
+        },
+        "name": "nzz",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "LastReplaced"
+              },
+              "name": "LastReplaced",
+              "schema": "dateTime"
+            },
+            {
+              "displayName": {
+                "en": "Clean"
+              },
+              "name": "Clean",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Rotate"
+              },
+              "name": "Rotate",
+              "schema": "double"
+            },
+            {
+              "displayName": {
+                "en": "Unclog"
+              },
+              "name": "Unclog",
+              "schema": "double"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "PourButton"
+        },
+        "name": "pou",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Condition"
+              },
+              "name": "Condition",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Good"
+                    },
+                    "enumValue": 0,
+                    "name": "Good"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Bad"
+                    },
+                    "enumValue": 1,
+                    "name": "Bad"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "RFID"
+        },
+        "name": "rfid",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "ReaderCondition"
+              },
+              "name": "ReaderCondition",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Good"
+                    },
+                    "enumValue": 0,
+                    "name": "Good"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Bad"
+                    },
+                    "enumValue": 1,
+                    "name": "Bad"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            },
+            {
+              "displayName": {
+                "en": "BezelCondition"
+              },
+              "name": "BezelCondition",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Good"
+                    },
+                    "enumValue": 0,
+                    "name": "Good"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Bad"
+                    },
+                    "enumValue": 1,
+                    "name": "Bad"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "TouchScreen"
+        },
+        "name": "tou",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "IsResponding"
+              },
+              "name": "IsResponding",
+              "schema": "boolean"
+            },
+            {
+              "displayName": {
+                "en": "LastCleaned"
+              },
+              "name": "LastCleaned",
+              "schema": "dateTime"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "WaterFiltrationHardware"
+        },
+        "name": "wtfth",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Condition"
+              },
+              "name": "Condition",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Good"
+                    },
+                    "enumValue": 0,
+                    "name": "Good"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Bad"
+                    },
+                    "enumValue": 1,
+                    "name": "Bad"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "displayName": {
+      "en": "Carbonator"
+    }
+  }

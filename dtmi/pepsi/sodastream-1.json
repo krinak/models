@@ -1,0 +1,110 @@
+{
+"@id": "dtmi:pepsi:sodastream;1",
+"@type": "Interface",
+"contents": [
+	{ 
+		"@type": "Command",
+		"commandType": "synchronous",
+		"displayName": {
+		  "en": "Echo"
+		},
+		"name": "Echo",
+		"request": {
+		  "@type": "CommandPayload",
+		  "displayN ame": {
+			"en": "Req"
+		  },
+		  "name": "Req",
+		  "schema": "string"
+		},
+		"response": {
+		  "@type": "CommandPayload",
+		  "displayName": {
+			"en": "Res"
+		  },
+		  "name": "Res",
+		  "schema": "string"
+		}
+	},
+    {
+		"@type": "Component",
+		"displayName": {
+		  "en": "DeviceRegistration"
+		},
+		"name": "DeviceRegistration",
+		"schema": "dtmi:pepsi:registration;1"
+	},
+	{
+		"@type": "Component",
+		"displayName": {
+		  "en": "Cellular"
+		},
+		"name": "Cellular",
+		"schema": "dtmi:pepsi:cellular;1"
+	},	 
+    {
+		"@type": "Component",
+		"displayName": {
+		  "en": "Device Health"
+		},
+		"name": "DeviceHealth",
+		"schema": "dtmi:pepsi:devicehealth;1"
+    },
+	{
+		"@type": "Component",
+		"displayName": {
+		  "en": "Consumption"
+		},
+		"name": "Consumption",
+		"schema": "dtmi:pepsi:consumption;1"
+	},
+	{
+        "@type": "Component",
+        "displayName": {
+          "en": "Device information"
+        },
+        "name": "DeviceInformation",
+        "schema": "dtmi:azureiot:DeviceManagement:DeviceInformation;1"
+    },
+	{
+        "@type": "Component",
+        "displayName": {
+          "en": "Notification"
+        },
+        "name": "Notification",
+        "schema": "dtmi:pepsi:notification;1"
+      },
+      {
+        "@type": "Component",
+        "displayName": {
+          "en": "Carbonator"
+        },
+        "name": "Carbonator",
+        "schema": "dtmi:pepsi:sodastream:carbonator;1"
+      },
+	   {
+        "@type": "Component",
+        "displayName": {
+          "en": "FieldService"
+        },
+        "name": "FieldService",
+        "schema": "dtmi:pepsi:fieldservice;1"
+      },
+      {
+        "@type": "Component",
+        "displayName": {
+          "en": "context"
+        },
+        "name": "context",
+        "schema": "dtmi:pepsi:context;1"
+      }
+	
+   ],
+    "displayName": {
+      "en": "sodastream"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]   
+}

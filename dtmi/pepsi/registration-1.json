@@ -1,0 +1,209 @@
+{
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:registration;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": [
+          "Telemetry",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "RegistrationCode"
+        },
+        "name": "registrationCode",
+        "schema": "string"
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Device"
+        },
+        "name": "device",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "GlobalDeviceId"
+              },
+              "name": "globalDeviceId",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "DeviceNumber"
+              },
+              "name": "deviceNumber",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "SerialNumber"
+              },
+              "name": "serialNumber",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Manufacturer"
+              },
+              "name": "manufacturer",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Customer"
+              },
+              "name": "customer",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "displayName": {
+                      "en": "Id"
+                    },
+                    "name": "id",
+                    "schema": "integer"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Address"
+                    },
+                    "name": "address",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Name"
+                    },
+                    "name": "name",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "City"
+                    },
+                    "name": "city",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "State"
+                    },
+                    "name": "state",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "PostalCode"
+                    },
+                    "name": "postalCode",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Country"
+                    },
+                    "name": "country",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Email"
+                    },
+                    "name": "email",
+                    "schema": "string"
+                  },
+                  {
+                    "displayName": {
+                      "en": "ServiceExpiration"
+                    },
+                    "name": "serviceExpiration",
+                    "schema": "dateTime"
+                  }
+                ]
+              }
+            },
+            {
+              "displayName": {
+                "en": "Location"
+              },
+              "name": "location",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Type"
+              },
+              "name": "type",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Change Credential"
+        },
+        "name": "changecredential",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Request"
+          },
+          "name": "Request",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "DeviceKey"
+                },
+                "name": "deviceKey",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "DeviceId"
+                },
+                "name": "deviceId",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "ScopeId"
+                },
+                "name": "scopeId",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "Friendly Name"
+                },
+                "name": "name",
+                "schema": "string"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "displayName": {
+      "en": "DeviceRegistration"
+    }
+}

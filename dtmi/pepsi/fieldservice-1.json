@@ -1,0 +1,250 @@
+ {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:fieldservice;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "ServiceRequest"
+        },
+        "name": "ServiceRequest",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "AlertCode"
+              },
+              "name": "AlertCode",
+              "schema": "integer"
+            },
+            {
+              "displayName": {
+                "en": "Name"
+              },
+              "name": "Name",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Ts"
+              },
+              "name": "Ts",
+              "schema": "dateTime"
+            },
+            {
+              "displayName": {
+                "en": "CorrelationTicket"
+              },
+              "name": "CorrelationTicket",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Note"
+              },
+              "name": "Note",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Category"
+              },
+              "name": "Category",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Status"
+              },
+              "name": "Status",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "JustReported"
+                    },
+                    "enumValue": 1,
+                    "name": "JustReported"
+                  },
+                  {
+                    "displayName": {
+                      "en": "TechnicianContacted"
+                    },
+                    "enumValue": 2,
+                    "name": "TechnicianContacted"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Finished"
+                    },
+                    "enumValue": 99,
+                    "name": "Finished"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            },
+            {
+              "displayName": {
+                "en": "Ticket"
+              },
+              "name": "Ticket",
+              "schema": "long"
+            },
+            {
+              "displayName": {
+                "en": "UserId"
+              },
+              "name": "UserId",
+              "schema": "string"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Command",
+        "displayName": {
+          "en": "ChangeStatus"
+        },
+        "name": "ChangeStatus",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Request"
+          },
+          "name": "Request",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Ticket"
+                },
+                "name": "Ticket",
+                "schema": "long"
+              },
+              {
+                "displayName": {
+                  "en": "Status"
+                },
+                "name": "Status",
+                "dtmi:dtdl:property:schema;2": {
+                  "@type": "Enum",
+                  "displayName": {
+                    "en": "Enum"
+                  },
+                  "enumValues": [
+                    {
+                      "displayName": {
+                        "en": "JustReported"
+                      },
+                      "enumValue": 1,
+                      "name": "JustReported"
+                    },
+                    {
+                      "displayName": {
+                        "en": "TechnicianContacted"
+                      },
+                      "enumValue": 2,
+                      "name": "TechnicianContacted"
+                    },
+                    {
+                      "displayName": {
+                        "en": "Finished"
+                      },
+                      "enumValue": 99,
+                      "name": "Finished"
+                    }
+                  ],
+                  "valueSchema": "integer"
+                }
+              },
+              {
+                "displayName": {
+                  "en": "Note"
+                },
+                "name": "Note",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "UserId"
+                },
+                "name": "UserId",
+                "schema": "string"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@type": "Command",
+        "displayName": {
+          "en": "CreateNew"
+        },
+        "name": "CreateNew",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "Request"
+          },
+          "name": "Request",
+          "schema": {
+            "@type": "Object",
+            "displayName": {
+              "en": "Object"
+            },
+            "fields": [
+              {
+                "displayName": {
+                  "en": "Note"
+                },
+                "name": "Note",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "UserId"
+                },
+                "name": "UserId",
+                "schema": "string"
+              },
+              {
+                "displayName": {
+                  "en": "CorrelationTicket"
+                },
+                "name": "CorrelationTicket",
+                "schema": "string"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Clear All Tickets"
+        },
+        "name": "ClearAllTickets"
+      }
+    ],
+    "displayName": {
+      "en": "FieldService"
+    }
+  }

@@ -1,0 +1,350 @@
+ {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:devicehealth;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "description": {
+          "en": "Accumulative elapsed seconds since power up"
+        },
+        "displayName": {
+          "en": "Runtime"
+        },
+        "name": "rt",
+        "schema": "long"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Event",
+          "EventValue"
+        ],
+        "displayName": {
+          "en": "OnWakeup"
+        },
+        "name": "wu",
+        "schema": "integer"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "Heap"
+        },
+        "name": "hp",
+        "schema": "long"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "Location"
+        ],
+        "displayName": {
+          "en": "Location"
+        },
+        "name": "loc",
+        "schema": "geopoint"
+      },
+      {
+        "@type": [
+          "Property",
+          "DateTimeValue"
+        ],
+        "displayName": {
+          "en": "Heartbeat On"
+        },
+        "name": "HeartbeatOn",
+        "schema": "dateTime",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Property",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "HeartbeatInterval"
+        },
+        "name": "HeartbeatInterval",
+        "schema": "integer",
+        "writable": true
+      },
+      {
+        "@type": "Property",
+        "displayName": {
+          "en": "Log Level"
+        },
+        "name": "LogLevel",
+        "writable": true,
+        "schema": {
+          "@type": "Enum",
+          "displayName": {
+            "en": "Enum"
+          },
+          "enumValues": [
+            {
+              "displayName": {
+                "en": "Debug"
+              },
+              "enumValue": 1,
+              "name": "Debug"
+            },
+            {
+              "displayName": {
+                "en": "Information"
+              },
+              "enumValue": 2,
+              "name": "Information"
+            },
+            {
+              "displayName": {
+                "en": "Warning"
+              },
+              "enumValue": 3,
+              "name": "Warning"
+            },
+            {
+              "displayName": {
+                "en": "Error"
+              },
+              "enumValue": 4,
+              "name": "Error"
+            }
+          ],
+          "valueSchema": "integer"
+        }
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Reboot"
+        },
+        "name": "Reboot",
+        "request": {
+          "@type": "CommandPayload",
+          "description": {
+            "en": "Seconds to wait before reboot"
+          },
+          "displayName": {
+            "en": "Wait"
+          },
+          "name": "Wait",
+          "schema": "integer"
+        }
+      },
+      {
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Wink"
+        },
+        "name": "Wink"
+      },
+      {
+        "@type": [
+          "Property",
+          "Location"
+        ],
+        "displayName": {
+          "en": "Default Location"
+        },
+        "name": "DefaultLocation",
+        "schema": "geopoint",
+        "writable": true
+      },
+      {
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Status"
+        },
+        "name": "sts",
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Level"
+              },
+              "name": "lvl",
+              "schema": "integer"
+            },
+            {
+              "displayName": {
+                "en": "Flags"
+              },
+              "name": "flg",
+              "dtmi:dtdl:property:schema;2": {
+                "@type": "Enum",
+                "displayName": {
+                  "en": "Enum"
+                },
+                "enumValues": [
+                  {
+                    "displayName": {
+                      "en": "Disabled"
+                    },
+                    "enumValue": 0,
+                    "name": "Disabled"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Override"
+                    },
+                    "enumValue": 1,
+                    "name": "Override"
+                  },
+                  {
+                    "displayName": {
+                      "en": "SelfTest"
+                    },
+                    "enumValue": 2,
+                    "name": "SelfTest"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Alarm"
+                    },
+                    "enumValue": 3,
+                    "name": "Alarm"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Warning"
+                    },
+                    "enumValue": 4,
+                    "name": "Warning"
+                  },
+                  {
+                    "displayName": {
+                      "en": "Normal"
+                    },
+                    "enumValue": 5,
+                    "name": "Normal"
+                  }
+                ],
+                "valueSchema": "integer"
+              }
+            },
+            {
+              "displayName": {
+                "en": "Active Alerts"
+              },
+              "name": "aa",
+              "schema": "integer"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Property",
+        "displayName": {
+          "en": "OTA"
+        },
+        "name": "OTA",
+        "writable": true,
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "Id"
+              },
+              "name": "Id",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "SasToken"
+              },
+              "name": "SasToken",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "FileUri"
+              },
+              "name": "FileUri",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "ContentHash"
+              },
+              "name": "ContentHash",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "SasTokenDuration"
+              },
+              "name": "SasTokenDuration",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "Retries"
+              },
+              "name": "Retries",
+              "schema": "integer"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Property",
+        "displayName": {
+          "en": "OTAStatus"
+        },
+        "name": "OTAStatus",
+        "writable": false,
+        "schema": {
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "displayName": {
+                "en": "State"
+              },
+              "name": "State",
+              "schema": "string"
+            },
+            {
+              "displayName": {
+                "en": "LastModified"
+              },
+              "name": "LastModified",
+              "schema": "dateTime"
+            },
+            {
+              "displayName": {
+                "en": "RetryCounter"
+              },
+              "name": "RetryCounter",
+              "schema": "integer"
+            }
+          ]
+        }
+      }
+    ],
+    "displayName": {
+      "en": "DeviceHealth"
+    }
+ }

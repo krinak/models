@@ -1,0 +1,357 @@
+{
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:cellular;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "SIM unique serial number"
+        },
+        "name": "ICCID",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Subscriber Identifier"
+        },
+        "name": "IMSI",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "description": {
+          "en": "Mobile Operator's Name"
+        },
+        "displayName": {
+          "en": "Operator"
+        },
+        "name": "Operator",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": "Property",
+        "displayName": {
+          "en": "Roaming Status"
+        },
+        "name": "RoamingStatus",
+        "writable": false,
+        "schema": {
+          "@type": "Enum",
+          "displayName": {
+            "en": "Enum"
+          },
+          "enumValues": [
+            {
+              "displayName": {
+                "en": "Home"
+              },
+              "enumValue": 0,
+              "name": "Home"
+            },
+            {
+              "displayName": {
+                "en": "Roaming"
+              },
+              "enumValue": 1,
+              "name": "Roaming"
+            }
+          ],
+          "valueSchema": "integer"
+        }
+      },
+      {
+        "@type": "Property",
+        "displayName": {
+          "en": "Network Type\t"
+        },
+        "name": "NetworkType",
+        "writable": false,
+        "schema": {
+          "@type": "Enum",
+          "displayName": {
+            "en": "Enum"
+          },
+          "enumValues": [
+            {
+              "displayName": {
+                "en": "NONE"
+              },
+              "enumValue": 1,
+              "name": "CG_SYS_NONE"
+            },
+            {
+              "displayName": {
+                "en": "GSM"
+              },
+              "enumValue": 2,
+              "name": "CG_SYS_GSM"
+            },
+            {
+              "displayName": {
+                "en": "GPRS"
+              },
+              "enumValue": 4,
+              "name": "CG_SYS_GPRS"
+            },
+            {
+              "displayName": {
+                "en": "EDGE"
+              },
+              "enumValue": 8,
+              "name": "CG_SYS_EDGE"
+            },
+            {
+              "displayName": {
+                "en": "WCDMA"
+              },
+              "enumValue": 16,
+              "name": "CG_SYS_WCDMA"
+            },
+            {
+              "displayName": {
+                "en": "HSDPA"
+              },
+              "enumValue": 32,
+              "name": "CG_SYS_HSDPA"
+            },
+            {
+              "displayName": {
+                "en": "HSUPA"
+              },
+              "enumValue": 64,
+              "name": "CG_SYS_HSUPA"
+            },
+            {
+              "displayName": {
+                "en": "HSPA"
+              },
+              "enumValue": 128,
+              "name": "CG_SYS_HSPA"
+            },
+            {
+              "displayName": {
+                "en": "HSDPA+"
+              },
+              "enumValue": 256,
+              "name": "CG_SYS_HSDPAPLUS"
+            },
+            {
+              "displayName": {
+                "en": "HSPA+"
+              },
+              "enumValue": 512,
+              "name": "CG_SYS_HSPAPLUS"
+            },
+            {
+              "displayName": {
+                "en": "LTE"
+              },
+              "enumValue": 1024,
+              "name": "CG_SYS_LTE"
+            },
+            {
+              "displayName": {
+                "en": "CDMA"
+              },
+              "enumValue": 4096,
+              "name": "CG_SYS_CDMA"
+            },
+            {
+              "displayName": {
+                "en": "EVDO"
+              },
+              "enumValue": 8192,
+              "name": "CG_SYS_EVDO"
+            },
+            {
+              "displayName": {
+                "en": "EVDOREL0"
+              },
+              "enumValue": 16384,
+              "name": "CG_SYS_EVDOREL0"
+            },
+            {
+              "displayName": {
+                "en": "EVDOREVA"
+              },
+              "enumValue": 32768,
+              "name": "CG_SYS_EVDOREVA"
+            },
+            {
+              "displayName": {
+                "en": "LTE NB1"
+              },
+              "enumValue": 65536,
+              "name": "CG_SYS_LTE_NB1"
+            },
+            {
+              "displayName": {
+                "en": "LTE NB2"
+              },
+              "enumValue": 131072,
+              "name": "CG_SYS_LTE_NB2"
+            },
+            {
+              "displayName": {
+                "en": "LTE M1"
+              },
+              "enumValue": 262144,
+              "name": "CG_SYS_LTE_M1"
+            }
+          ],
+          "valueSchema": "integer"
+        }
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "description": {
+          "en": "Unique identifier for the current mobile network"
+        },
+        "displayName": {
+          "en": "PLMN"
+        },
+        "name": "PLMN",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "APN"
+        },
+        "name": "APN",
+        "schema": "string",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Modem Module Identifier"
+        },
+        "name": "ModID",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "Modem Version"
+        },
+        "name": "ModVer",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "displayName": {
+          "en": "CSQ"
+        },
+        "name": "csq",
+        "schema": "integer"
+      },
+      {
+        "@type": [
+          "Property",
+          "NumberValue"
+        ],
+        "description": {
+          "en": "CSQ and Session report interval"
+        },
+        "displayName": {
+          "en": "Modem Interval"
+        },
+        "name": "StatusInval",
+        "schema": "integer",
+        "writable": true
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "description": {
+          "en": "Session time since connected"
+        },
+        "displayName": {
+          "en": "Session Time"
+        },
+        "name": "ssc",
+        "schema": "integer"
+      },
+      {
+        "@type": [
+          "Property",
+          "StringValue"
+        ],
+        "displayName": {
+          "en": "IP Address"
+        },
+        "name": "IPAddress",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "description": {
+          "en": "bytes sent"
+        },
+        "displayName": {
+          "en": "Tx"
+        },
+        "name": "tx",
+        "schema": "integer"
+      },
+      {
+        "@type": [
+          "Telemetry",
+          "NumberValue"
+        ],
+        "description": {
+          "en": "bytes received"
+        },
+        "displayName": {
+          "en": "Rx"
+        },
+        "name": "rx",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Cellular"
+    }
+ }

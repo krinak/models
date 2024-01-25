@@ -1,0 +1,29 @@
+{
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:pepsi:consumption;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@type": [
+          "Telemetry",
+          "Event",
+          "EventValue"
+        ],
+        "description": {
+          "en": "consumption event {Ticket, QrCode, Value, Contactless}"
+        },
+        "displayName": {
+          "en": "Transaction"
+        },
+        "name": "tnx",
+        "schema": "string"
+      }
+    ],
+    "displayName": {
+      "en": "Consumption"
+    }
+}
+  
